@@ -1,0 +1,56 @@
+my-task-api/
+│
+├── src/
+│   ├── controllers/  (A lógica: o que acontece quando acessamos a rota)
+│   ├── routes/       (O mapa: quais endereços existem)
+│   ├── models/       (A estrutura dos dados)
+│   └── app.js        (O ponto de entrada)
+│
+├── package.json
+└── README.md
+---------------------------------------------------------------------------------------
+1 Configuração Inicial (Setup)
+
+1.1 Iniciar o projeto:
+```bash
+npm init -y
+
+```
+2 Instalar dependências:
+```bash
+npm install express
+npm install --save-dev nodemon
+
+```
+3 Configurar o script de start: No arquivo package.json
+
+"scripts": {
+  "dev": "nodemon src/app.js"
+}
+---------------------------------------------------------------------------------------
+
+1 "Mão na Massa": O Código Base
+Vamos criar o servidor básico para garantir que tudo funciona.
+
+1.1 fazer as importações dos package
+1.2 Middleware para o Express entender JSON (Muito importante!)
+1.3 Rota de teste (Health Check)
+1.4 Iniciar o servidor
+
+2 Criando as Rotas e a Lógica (O CRUD)
+
+## "Banco de Dados" em memória MOCKA
+## LISTAR todas as tarefas (GET)
+## CRIAR uma nova tarefa (POST)
+## Validação básica
+## ID simples (em banco real seria um UUID)
+## ATUALIZAR uma tarefa (PUT)
+## Encontrar a tarefa pelo ID
+## Atualizar status
+## DELETAR uma tarefa (DELETE)
+## Filtrar o array removendo o item com aquele ID
+##
+
+
+
+
