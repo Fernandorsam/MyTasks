@@ -4,10 +4,9 @@ import { listTasks, listTasksById, createTask, changeTask, deleteTask } from '..
 
 const router = Router();
 
-router.get('/', listTasks);
-router.get('/:id', listTasksById);
-router.post('/', createTask);
-router.put('/:id', changeTask);
-router.delete('/:id', deleteTask);
-
+router.get('/tasks', listTasks);
+router.get('/tasks/:id', listTasksById);
+router.post('/tasks', createTask);
+router.put('/tasks/:id', changeTask);
+router.delete('/tasks/:id', deleteTask);
 export default router;

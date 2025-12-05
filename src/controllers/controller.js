@@ -1,6 +1,6 @@
 
 
-const taskMocka = [
+let taskMocka = [
   {id: 1, title:  "treinar programação", done: false },
   {id: 2, title:  "estudar inglês", done: false },
   {id: 3, title:  "fazer compras", done: true }
@@ -50,16 +50,20 @@ const changeTask = (req, res) => {
   res.json(taskMocka[taskIndex]);
 }
 
-const deleteTask = (req, res) => {
-  const taskId = parseInt(req.params.id);
-  const taskIndex = taskMocka.findIndex((task, index) => index + 1 === taskId);
-  if (taskIndex === -1) {
-    return res.status(404).json({ error: 'Task not found' });
-  }
 
-  taskMocka.splice(taskIndex, 1);
-  res.status(206).json({message : 'Task deleted successfully'});
-}
+const deleteTask = (req, res) => {
+    const { id } = req.params;
+    
+    const initialSize = taskMocka.length;
+    taskMocka = taskMocka.filter(t => t.id != id);
+
+    if (taskMocka.length === initialSize) {
+        return res.status(404).json({ error: 'Tarefa não encontrada para deletar' });
+    }
+
+    res.status(206).json({message:'task deleted successfully'}); 
+
+};
 
 
 
