@@ -2,7 +2,7 @@ import app from './src/app.js';
 import 'dotenv/config.js';
 
 
- const port =  3001 || process.env.HTTP_PORT;
+ const port =  3001 || process.env.PORT;
  
 
   app.listen(port, () => {

@@ -58,7 +58,7 @@ const deleteTask = (req, res) => {
     taskMocka = taskMocka.filter(t => t.id != id);
 
     if (taskMocka.length === initialSize) {
-        return res.status(404).json({ error: 'Tarefa não encontrada para deletar' });
+        return res.status(404).json({ error: 'Task not found' });
     }
 
     res.status(206).json({message:'task deleted successfully'}); 
